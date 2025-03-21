@@ -31,6 +31,4 @@ public class MyUser {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    @Column(name = "refresh_token")
-    private String refreshToken;
 }

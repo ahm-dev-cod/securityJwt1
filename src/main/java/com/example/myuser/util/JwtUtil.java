@@ -26,14 +26,6 @@ public class JwtUtil {
                 .compact();
     }
 
-    public static String generateRefreshToken(String username) {
-        return Jwts.builder()
-                .subject(username)
-                .issuedAt(new Date())
-                .expiration(new Date(System.currentTimeMillis() + REFRESH_TOKEN_EXPIRATION_TIME))
-                .signWith(Keys.hmacShaKeyFor(SECRET_KEY.getBytes(StandardCharsets.UTF_8)))
-                .compact();
-    }
 
     public static String getUsernameFromToken(String token) {
         Claims claims = Jwts.parser()
